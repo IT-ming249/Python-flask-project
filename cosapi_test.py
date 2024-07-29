@@ -1,0 +1,12 @@
+import requests
+
+
+#这个py文件只是为了测试一下jwt鉴权
+
+headers ={
+   "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMTI5MjI2MSwianRpIjoiOTNlMWI3YzgtMmQwNC00ODBlLWJmZWEtMDYwZDlkZDgwYzFlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IkFrdHJaOTVQTGNlZnRCN0RXTEFhZFQiLCJuYmYiOjE3MjEyOTIyNjEsImNzcmYiOiI1NWE0MTA0NS05NjVjLTRlYjEtODg4Yi0yYWU2ZTRmZWQ2NDkiLCJleHAiOjE3MjEyOTMxNjF9.bnYtahAfrotMf6ix7m5xn0z3tdkRAHSXTHR8gQvRwE0"
+}# flask-jwt-extended的过期时间是15分钟
+
+resp = requests.get("http://127.0.0.1:5000/cmsapi/",headers=headers)
+
+print(resp.text)
