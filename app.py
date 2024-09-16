@@ -65,9 +65,6 @@ cors.init_app(app,resources={r"/cmsapi/*": {"origins": "*"}})#所有以/cmsapi�
 #排除cmsapi的csrf验证
 csrf.exempt(cmsapi_bp)
 
-##部署
-#pip freeze -> requirements.txt  将所有依赖项打包到 requirements.exe中
-#git init 生产空的git仓库
 
 #vue参考文档：https://www.zlkt.net/book/detail/13
 if __name__ == '__main__':
