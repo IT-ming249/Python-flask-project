@@ -143,9 +143,7 @@ def upload_post_image():
         _, ext=os.path.splitext(filename) #ext为后缀
         filename =md5((g.user.email+str(time.time())).encode("utf-8")).hexdigest()+ext
         image_path= os.path.join(current_app.config['POST_IMAGE_SAVE_PATH'],filename)
-        image.save(image_path) #将头像保存到media文件夹中
-        g.user.avatar=filename #将头像保存到数据库中，由于个人设置是在登录以后才能进入，所以这里可以用全局变量g
-        db.session.commit()
+        image.save(image_path)
         return jsonify({
             "errno":0,
             "data":[{
