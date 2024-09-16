@@ -65,13 +65,7 @@ cors.init_app(app,resources={r"/cmsapi/*": {"origins": "*"}})#所有以/cmsapi�
 #排除cmsapi的csrf验证
 csrf.exempt(cmsapi_bp)
 
-##部署
-#pip freeze -> requirements.txt  将所有依赖项打包到 requirements.exe中
-#git init 生产空的git仓库
-#git add . 将所有文件提交到暂存区
-#git commit -m "first commit" 提交到git本地仓库
-#git remote add origin https://gitee.com/he-haoming-dev/pythonbbs.git 本地仓库链接到远程仓库
-#
+
 #vue参考文档：https://www.zlkt.net/book/detail/13
 if __name__ == '__main__':
     app.run()
